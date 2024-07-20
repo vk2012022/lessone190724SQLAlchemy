@@ -30,7 +30,7 @@ class LoginForm(FlaskForm):
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=3)])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=2)])
     submit = SubmitField('Update')
 
     def validate_username(self, username):
