@@ -11,18 +11,46 @@
         <div>
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}
+            {% if form.username.errors %}
+                <ul>
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div>
             {{ form.email.label }}<br>
             {{ form.email(size=32) }}
+            {% if form.email.errors %}
+                <ul>
+                    {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div>
             {{ form.password.label }}<br>
             {{ form.password(size=32) }}
+            {% if form.password.errors %}
+                <ul>
+                    {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div>
             {{ form.confirm_password.label }}<br>
             {{ form.confirm_password(size=64) }}
+            {% if form.confirm_password.errors %}
+                <ul>
+                    {% for error in form.confirm_password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div>
             {{ form.submit() }}
